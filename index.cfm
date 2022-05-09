@@ -31,33 +31,33 @@
                             <b>Correct these errors: <br />You must include your name. <br />You did not enter the right text. Are you a spammer? </b>
                         </cfif>
                     </cfif>
-                    <cfoutput>
-                        <p> Please fill the form below. </p>
-                        <form action="components/task1.cfc?method=check_info" method="post">
-                            <table>
-                                <tr>
-                                	<td>Email:</td>
-                                	<td><input name="name" type="text" value="#form.name#"></td>
-                                </tr>                                      
-                                <tr>
-                                    <td>Enter Text Below:</td>
-                                    <td><input type="text" name="captcha"></td>
-                                </tr>                                 
-                                <tr>
-                                	<td colspan="2">
-                                		<cfimage action="captcha" width="300" height="75" text="#captcha#">
-                                		<input type="hidden" name="captchaHash" value="#captchaHash#">
-                                	</td>
-                                </tr>
-                                <tr>
-                                	<td></td>
-                                    <td>
-                                    	<input type="submit" name="send" value="Subscribe Newsletter">
-                                    </td>
-                                </tr>
-                            </table>
-                        </form>
-                    </cfoutput>
+                        <cfoutput>
+                            <p> Please fill the form below. </p>
+                            <form action="components/task1.cfc?method=check_info" method="post">
+                                <table>
+                                        <tr>
+                                            <td>Email:</td>
+                                            <td><input name="name" type="text" value="#form.name#"></td>
+                                        </tr>                                      
+                                        <tr>
+                                            <td>Enter Text Below:</td>
+                                            <td><input type="text" name="captcha"></td>
+                                        </tr>                                 
+                                        <tr>
+                                            <td colspan="2">
+                                                <cfimage action="captcha" width="300" height="75" text="#captcha#">
+                                                <input type="hidden" name="captchaHash" value="#captchaHash#">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <input type="submit" name="send" value="Subscribe Newsletter">
+                                            </td>
+                                        </tr>
+                                </table>
+                            </form>
+                        </cfoutput>
                     <cfelse>
                 </cfif>
             </div>
