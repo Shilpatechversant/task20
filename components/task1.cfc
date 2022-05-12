@@ -8,7 +8,7 @@
         <cfscript> for(i=1; i <= length; i++) 
 			{ char=mid(chars, randRange(1, len(chars)),1); result&=char; } 
 		</cfscript>
-        <cfreturn result>
+        <cfreturn local.result>
     </cffunction>
 
     <cffunction name="check_info" access="remote">
@@ -20,15 +20,15 @@
             <cfset local.errors=1>
         </cfif>
         <cfif hash(ucase(Arguments.captcha)) neq Arguments.captchaHash>
-            <cfset var errors="2">
+            <cfset var local.errors="2">
         </cfif>
-        <cfif errors is "">
+        <cfif local.errors is "">
             <!--- do something here --->
             <cflocation url="../index.cfm?success=1">
         </cfif>
-        <cfif errors>
+        <cfif local.errors>
             <!--- do something here --->
-            <cflocation url="../index.cfm?errors=#errors#">
+            <cflocation url="../index.cfm?errors=#local.errors#">
         </cfif>
     </cffunction>
 </cfcomponent>

@@ -1,3 +1,5 @@
+<cfset showForm=true>
+<cfparam name="form.name" default="">
 <html>
     <head>
         <link rel="stylesheet" href="css/style.css">
@@ -14,8 +16,7 @@
                         <p> Thank you for submitting your information,successfully subscribe our newsletter. </p>
                     </cfoutput>
                 </cfif>
-                <cfset showForm=true>
-                <cfparam name="form.name" default="">
+             
                 <cfif showForm>
                     <cfinvoke component="components/task1" method="makeRandomString" returnVariable="myReturn">
                     <cfset captcha=myReturn>
